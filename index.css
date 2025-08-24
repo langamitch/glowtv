@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.862),rgba(0, 0, 0, 0.538), rgba(0, 0, 0, 0.034));
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+
+.logo {
+  align-items: center; 
+  font-size: 16px;
+  font-weight: 600;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+ 
+}
+
+.logo span{
+  margin-left: 5px;
+  border: 1px solid #fff;
+  height: fit-content;
+  padding: 1px 3px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+  background: transparent;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-box input {
+  background: transparent; /* Change background color */
+  width: 100%;
+  color: #fff;
+  padding: 8px 12px 8px 36px; /* extra left padding for icon */
+  border-radius: 20px;
+  border: 1px solid #424141;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none; /* allows clicking in input */
+  fill: #888; /* icon color */
+}
+
+
+.icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 0 0px;
+}
+
+.icons .icon {
+  width: 35px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.icons .icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav {
+   
+    align-items: flex-start;
+  }
+
+  .search-container {
+    justify-content: flex-start;
+    width: 100%;
+
+  }
+
+  .icons {
+    display: flex;
+    gap: 0px;
+  }
+
+}
+
+.top-bar {
+  top: 70px;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: transparent; /* dark background */
+  width: 100%;
+  z-index: 999;
+}
+
+/* Left container */
+.left-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Back arrow styling */
+.back-arrow {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Right container centered horizontally */
+.right-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 44px;
+  border: none;
+  border-radius: 0px;
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.Active {
+  color: #424141;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: row;
+    padding: 8px 10px;
+  }
+
+  .right-container {
+    gap: 6px;
+  }
+
+  .btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+}
+/* End of top bar */
+
+.shuffle {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* adjust width as needed */
+  margin: 20px;
+  max-width: 600px;
+  cursor: pointer;
+}
+
+.shuffle img {
+  width: 100%;
+  margin-top: 80px;
+  border-radius: 10px; /* optional rounded corners */
+  display: block;
+}
+
+.shuffle-text {
+  margin-top: px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+}
+
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.square {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #222;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.square img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-text {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.item-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between; /* icon on far right */
+}
+
+.item-text {
+  flex: 1;               /* take full space to center the text */
+  text-align: center;    /* center text under the square */
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.item-icon {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+/* Responsive for small devices */
+@media (max-width: 768px) {
+  .grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Modal base */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 0px;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #000000;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  padding: 20px;
+
+  color: #fff;
+  position: relative;
+  transform: translateY(0);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Modal image */
+.modal-body img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Responsive positioning */
+@media (max-width: 768px) {
+  .modal {
+    align-items: flex-end; /* Move modal to bottom */
+  }
+  .modal-content {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: 80vh;
+    max-width: none;
+  }
+}
