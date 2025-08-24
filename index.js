@@ -84,3 +84,31 @@
   });
 
 
+  const scrollContainer = document.querySelector('.scroll-container');
+  const leftArrow = document.querySelector('.scroll-arrow.left');
+  const rightArrow = document.querySelector('.scroll-arrow.right');
+  const scrollAmount = 150; // Adjust scroll per click
+  
+  leftArrow.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+  
+  rightArrow.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+  
+  // Optional: open modal on click
+  document.querySelectorAll('.scroll-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const modal = document.getElementById('itemModal');
+      const modalImg = document.getElementById('modalImg');
+      // Example if scroll-item contains an img
+      const img = item.querySelector('img');
+      if(img){
+        modalImg.src = img.src;
+        modal.style.display = 'flex';
+        modal.style.pointerEvents = 'auto';
+      }
+    });
+  });
+  

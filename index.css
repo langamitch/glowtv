@@ -315,6 +315,7 @@ nav ul li a {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
   display: none;
   align-items: center;
   justify-content: center;
@@ -336,19 +337,63 @@ nav ul li a {
   transform: translateY(0);
 }
 
+.modalText {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modalDescription {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 400;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
 /* Close button */
 .close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  background: #fff;         /* White background */
+  border-radius: 8px;       /* Circular shape */
+  display: flex;
+  align-items: center;      /* Vertically center SVG */
+  justify-content: center;  /* Horizontally center SVG */
   cursor: pointer;
-  color: #fff;
+  z-index: 10;
+  transition: background 0.3s;
 }
+
+.close-btn:hover {
+  background: #e3e3e3;      /* Slight hover effect */
+}
+
+.close-btn svg {
+  width: 20px;              /* Adjust size of icon */
+  height: 20px;
+  fill: #000;               /* Make icon black on white background */
+}
+
+
+
 
 /* Modal image */
 .modal-body img {
   width: 100%;
+  object-fit: cover; 
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -361,7 +406,143 @@ nav ul li a {
   .modal-content {
     border-radius: 15px 15px 0 0;
     width: 100%;
-    height: 80vh;
+    height: fit-content;
     max-width: none;
+    text-align: left;
   }
+
+  .modal-body img{
+    max-height: 200px;
+  }
+}
+
+.creator {
+  display: flex;
+  flex-direction: column;
+  align-items:left;
+  background: transparent;
+  padding: 20px 0px;
+  border-radius: 12px;
+  max-width: 220px;
+  text-align: left;
+  gap: 15px;
+}
+
+.creator .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.creator .socials {
+  display: flex;
+  gap: 0px;
+}
+
+.creator .socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+ 
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.creator .socials a:hover {
+  background: #fff;
+}
+
+.creator .socials a svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  transition: all 0.3s ease;
+}
+
+.creator .socials a:hover svg {
+  fill: #000;
+}
+
+.creator .watch {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  width: fit-content;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.creator .watch:hover {
+  background: transparent;
+ 
+}
+
+/* Responsive: smaller screens */
+@media (max-width: 480px) {
+  .creator {
+    max-width: 180px;
+    padding: 20px 0px;
+  }
+
+  .creator .socials a {
+    width: 30px;
+    height: 30px;
+  }
+
+
+}
+
+.horizontal-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  background-color: black;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  padding: 10px 0;
+}
+
+.scroll-item {
+  min-width: calc(50% - 10px); /* show 2 items fully + peek */
+  height: 70px;
+  background-color: #333;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+
+.scroll-item:hover {
+  transform: scale(1.05);
+}
+
+.scroll-arrow {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 5;
+  transition: background 0.3s;
+}
+
+.scroll-arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
