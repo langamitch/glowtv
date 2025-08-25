@@ -46,41 +46,19 @@
 
 <div class="about-overlay" id="aboutOverlay">
   <div class="about-content">
-    <h2>About GlowTV</h2>
+<h2>About GlowTV</h2>
 
-    <p>GlowTV is a constantly evolving platform showcasing clips, channels, and content created with Veo 2 and Veo 3 generative models.</p>
-    
-    <p>Use the remote control at the bottom of the screen to explore different channels and view the prompts behind each clip. Tap the <strong>Home</strong> button to return to all channels, or watch short films created with Flow and other creative tools and techniques.</p>
-    
-    <p>We’re committed to improving AI for everyone. Please note that AI-generated outputs can sometimes be inaccurate or unrealistic. Videos and prompt suggestions are experimental, so if you encounter inappropriate content, report it 
-      <span id="reportLink" style="color:blue;cursor:pointer;text-decoration:underline;">here</span>  or click the flag icon to help us make AI safer and better for all.</p>
-    
-    
+<p>GlowTV is a constantly evolving platform showcasing clips, channels, and content created with Veo 2 and Veo 3 generative models.</p>
+
+<p>Use the remote control at the bottom of the screen to explore different channels and view the prompts behind each clip. Tap the <strong>Home</strong> button to return to all channels, or watch short films created with Flow and other creative tools and techniques.</p>
+
+<p>We’re committed to improving AI for everyone. Please note that AI-generated outputs can sometimes be inaccurate or unrealistic. Videos and prompt suggestions are experimental, so if you encounter inappropriate content, report it 
+<a href="#" id="report-link">here</a> or click the flag icon to help us make AI safer and better for all.</p>
+
      <button class="got-it-btn" id="gotItBtn">Got It</button>
   </div>
 </div>
 
-<!-- Report Modal (Unique ID: reportModal) -->
-<div id="reportModal" class="report-modal">
-  <div class="report-modal-content">
-    <span class="close-report-modal" id="closeReportModal">&times;</span>
-    <h2>Report Content</h2>
-    <form id="reportForm"><!-- Report Modal (Unique ID: reportModal)
-      <label for="reportReason">Reason:</label>
-      <select id="reportReason" name="reason" required>
-        <option value="">Select a reason</option>
-        <option value="Inappropriate content">Inappropriate content</option>
-        <option value="Misleading information">Misleading information</option>
-        <option value="Other">Other</option>
-      </select>
- -->
-      <label for="reportDetails">Additional Details:</label>
-      <textarea id="reportDetails" name="details" placeholder="Provide more info..." required></textarea>
-
-      <button type="submit">Submit Report</button>
-    </form>
-  </div>
-</div>
 
 
 <section class="top-bar">
@@ -234,26 +212,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="index.js"></script>
-<script type="module">
-  // Import Firebase
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-
-  const firebaseConfig = {
-  apiKey: "AIzaSyDaY9su3okfyM28CUKxmzfHHeaID23P8o8",
-  authDomain: "glow-2bc93.firebaseapp.com",
-  projectId: "glow-2bc93",
-  storageBucket: "glow-2bc93.firebasestorage.app",
-  messagingSenderId: "179423527247",
-  appId: "1:179423527247:web:e1c53a545d002804f9453a"
-};
-
-  // Init Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-</script>
-
 
 </body>
 
