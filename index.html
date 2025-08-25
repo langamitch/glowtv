@@ -31,9 +31,10 @@
       <!-- Info Icon -->
       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-400q0-100 70-170t170-70h240q100 0 170 70t70 170v400q0 33-23.5 56.5T760-120H200Zm0-80h560v-400q0-66-47-113t-113-47H360q-66 0-113 47t-47 113v400Zm160-280q-33 0-56.5-23.5T280-560q0-33 23.5-56.5T360-640q33 0 56.5 23.5T440-560q0 33-23.5 56.5T360-480Zm240 0q-33 0-56.5-23.5T520-560q0-33 23.5-56.5T600-640q33 0 56.5 23.5T680-560q0 33-23.5 56.5T600-480ZM280-200v-80q0-33 23.5-56.5T360-360h240q33 0 56.5 23.5T680-280v80h-80v-80h-80v80h-80v-80h-80v80h-80Zm-80 0h560-560Z"/></svg>
     </div>
-    <div class="icon" >
-      <!-- Info Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+    <div class="icon" id="infoIcon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+        <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+      </svg>
     </div>
     <div class="icon">
       <!-- Menu Icon -->
@@ -41,6 +42,46 @@
     </div>
   </div>
 </nav>
+<!-- About Overlay -->
+
+<div class="about-overlay" id="aboutOverlay">
+  <div class="about-content">
+    <h2>About GlowTV</h2>
+
+    <p>GlowTV is a constantly evolving platform showcasing clips, channels, and content created with Veo 2 and Veo 3 generative models.</p>
+    
+    <p>Use the remote control at the bottom of the screen to explore different channels and view the prompts behind each clip. Tap the <strong>Home</strong> button to return to all channels, or watch short films created with Flow and other creative tools and techniques.</p>
+    
+    <p>We’re committed to improving AI for everyone. Please note that AI-generated outputs can sometimes be inaccurate or unrealistic. Videos and prompt suggestions are experimental, so if you encounter inappropriate content, report it 
+      <span id="reportLink" style="color:blue;cursor:pointer;text-decoration:underline;">here</span>  or click the flag icon to help us make AI safer and better for all.</p>
+    
+    
+     <button class="got-it-btn" id="gotItBtn">Got It</button>
+  </div>
+</div>
+
+<!-- Report Modal (Unique ID: reportModal) -->
+<div id="reportModal" class="report-modal">
+  <div class="report-modal-content">
+    <span class="close-report-modal" id="closeReportModal">&times;</span>
+    <h2>Report Content</h2>
+    <form id="reportForm"><!-- Report Modal (Unique ID: reportModal)
+      <label for="reportReason">Reason:</label>
+      <select id="reportReason" name="reason" required>
+        <option value="">Select a reason</option>
+        <option value="Inappropriate content">Inappropriate content</option>
+        <option value="Misleading information">Misleading information</option>
+        <option value="Other">Other</option>
+      </select>
+ -->
+      <label for="reportDetails">Additional Details:</label>
+      <textarea id="reportDetails" name="details" placeholder="Provide more info..." required></textarea>
+
+      <button type="submit">Submit Report</button>
+    </form>
+  </div>
+</div>
+
 
 <section class="top-bar">
   <div class="left-container">
@@ -191,8 +232,29 @@
   </div>
 </div>
 
-
-</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="index.js"></script>
+<script type="module">
+  // Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+  apiKey: "AIzaSyDaY9su3okfyM28CUKxmzfHHeaID23P8o8",
+  authDomain: "glow-2bc93.firebaseapp.com",
+  projectId: "glow-2bc93",
+  storageBucket: "glow-2bc93.firebasestorage.app",
+  messagingSenderId: "179423527247",
+  appId: "1:179423527247:web:e1c53a545d002804f9453a"
+};
+
+  // Init Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+</script>
+
+
+</body>
+
 </html>

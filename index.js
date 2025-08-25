@@ -111,4 +111,83 @@
       }
     });
   });
+  document.addEventListener('DOMContentLoaded', () => {
+    const infoIcon = document.getElementById('infoIcon');
+    const aboutOverlay = document.getElementById('aboutOverlay');
+    const gotItBtn = document.getElementById('gotItBtn');
   
+    if (!infoIcon || !aboutOverlay || !gotItBtn) return;
+  
+    function openAbout() {
+      aboutOverlay.classList.add('active');        // makes it clickable + visible via CSS
+      if (window.gsap) {
+        gsap.set('.about-content', { y: -30, opacity: 0 });
+        gsap.to(aboutOverlay, { opacity: 1, duration: 0.4, ease: 'power2.out' });
+        gsap.to('.about-content', { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' });
+      }
+    }
+  
+    function closeAbout() {
+      if (window.gsap) {
+        gsap.to('.about-content', { y: -30, opacity: 0, duration: 0.3, ease: 'power2.in' });
+        gsap.to(aboutOverlay, {
+          opacity: 0,
+          duration: 0.35,
+          ease: 'power2.in',
+          onComplete: () => aboutOverlay.classList.remove('active')
+        });
+      } else {
+        aboutOverlay.classList.remove('active');
+      }
+    }
+  
+    infoIcon.addEventListener('click', openAbout);
+    gotItBtn.addEventListener('click', closeAbout);
+    aboutOverlay.addEventListener('click', (e) => {
+      if (e.target === aboutOverlay) closeAbout(); // click outside content closes
+    });
+  });
+
+  // Elements specific to report modal
+const reportModal = document.getElementById('reportModal');
+const closeReportModal = document.getElementById('closeReportModal');
+const reportLink = document.getElementById('reportLink');
+const reportForm = document.getElementById('reportForm');
+const reportReason = document.getElementById('reportReason');
+const reportDetails = document.getElementById('reportDetails');
+
+// Open modal
+reportLink.addEventListener('click', () => {
+  reportModal.style.display = 'flex';
+});
+
+// Close modal
+closeReportModal.addEventListener('click', () => {
+  reportModal.style.display = 'none';
+});
+
+// Close when clicking outside the modal content
+window.addEventListener('click', (e) => {
+  if (e.target === reportModal) {
+    reportModal.style.display = 'none';
+  }
+});
+
+// Submit form to Firebase
+reportForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  try {
+    await addDoc(collection(db, "reports"), {
+      reason: reportReason.value,
+      details: reportDetails.value,
+      timestamp: new Date()
+    });
+    alert('Report submitted successfully!');
+    reportModal.style.display = 'none';
+    reportForm.reset();
+  } catch (error) {
+    console.error("Error submitting report: ", error);
+    alert('Failed to submit report.');
+  }
+});

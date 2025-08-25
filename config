@@ -1,0 +1,8 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyDaY9su3okfyM28CUKxmzfHHeaID23P8o8",
+  authDomain: "glow-2bc93.firebaseapp.com",
+  projectId: "glow-2bc93",
+  storageBucket: "glow-2bc93.firebasestorage.app",
+  messagingSenderId: "179423527247",
+  appId: "1:179423527247:web:e1c53a545d002804f9453a"
+};
