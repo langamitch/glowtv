@@ -660,7 +660,6 @@ nav ul li a {
 
 }
 
-
 .hero p {
   font-size: 1.2rem;
   margin: 10px 0 30px;
@@ -769,7 +768,7 @@ nav ul li a {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  
   margin: 0 auto;
   overflow: hidden;
   border-radius: 8px;
