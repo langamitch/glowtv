@@ -147,3 +147,5 @@
       if (e.target === aboutOverlay) closeAbout(); // click outside content closes
     });
   });
+
+
