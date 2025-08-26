@@ -717,6 +717,16 @@ nav ul li a {
   .hero p {
     font-size: .9rem;
   }
+  .titles {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 20px 80px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
 }
 .video-section {
   position: relative;
@@ -808,7 +818,8 @@ nav ul li a {
       gap: 60px;
       padding: 20px 80px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 500;
+      font-family: 'Google Sans', sans-serif;
     }
 
     .titles span {
@@ -827,10 +838,14 @@ nav ul li a {
     .text-box {
       text-align: left;
       padding: 20px 40px;
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto 30px;
       font-size: 13px;
+      font-weight: 500;
       min-height: 60px; /* prevents jump when text changes */
+    }
+    .text-box p{
+      font-weight: 500;
     }
 
     /* Horizontal slides */
@@ -863,7 +878,31 @@ nav ul li a {
     .images img {
       width: 200px;
       height: 120px;
-      border-radius: 10px;
+      border-radius: 6px;
       object-fit: cover;
       border: 1px solid #212121;
+    }
+    @media (min-width: 769px) {
+      
+    .images img {
+      min-width: 400px;
+      min-height: 400px;
+    }
+    .text-box {
+      text-align: left;
+      padding: 20px 40px;
+      max-width: 1000px;
+      margin: 0 auto 30px;
+      font-size: 24px;}
+
+      .titles {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        padding: 20px 80px;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
     }
