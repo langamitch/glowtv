@@ -840,7 +840,7 @@ nav ul li a {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       gap: 40px;
-      padding: 40px 80px;
+      padding: 40px 0px;
       scrollbar-width: none; /* Firefox */
     }
 
