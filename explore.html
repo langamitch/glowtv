@@ -67,9 +67,16 @@
 
 
 <section class="top-bar">
-  <div class="left-container">
-    <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e3e3e3"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+  <div class="left-container" onclick="goBack()" style="cursor:pointer;">
+    <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e3e3e3">
+      <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
+    </svg>
   </div>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 
   <div class="right-container">
     <button class="btn Active">Channels</button>
